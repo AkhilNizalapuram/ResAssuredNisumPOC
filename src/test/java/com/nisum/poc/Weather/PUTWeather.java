@@ -1,17 +1,17 @@
 package com.nisum.poc.Weather;
 
+import com.nisum.poc.ReadProperties;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
 import org.testng.Assert;
-
 import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.logging.Logger;
 
 import static org.testng.Assert.assertTrue;
@@ -20,8 +20,17 @@ public class PUTWeather {
 
     private static Logger log = Logger.getLogger(String.valueOf(PUTWeather.class));
 
+    protected static Properties prop = null;
+    static {
+        try {
+            prop = ReadProperties.loader_properties();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
         public static void updateWeather() throws IOException {
-            File file = new File("src/test/resources/jsonfile/create.json");
+            File file = new File("src/test/resources/jsonfile/CreateWeather.json");
             String content = FileUtils.readFileToString(file, "utf-8");
             JSONObject weather = new JSONObject(content);
             weather.put("external_id","HYD_TEST001");
@@ -30,7 +39,7 @@ public class PUTWeather {
             weather.put("Longitude",79.97);
             weather.put("Altitude",552);
             Response response = RestAssured.given()
-                    .when().queryParam("appid", "b8896959f2c926765dfbaefb02c3c260")
+                    .when().queryParam("appid", prop.getProperty("APP_ID"))
                     .contentType(ContentType.JSON)
                     .body(FileUtils.readFileToString(file,"utf-8"))
                     .put("/stations/5e95966ecca8ce0001f1aada");
@@ -43,29 +52,7 @@ public class PUTWeather {
         ResponseBody body = response.getBody();
         String bodyAsString = body.asString();
 
-        Assert.assertEquals(statusLine /*actual value*/, "HTTP/1.1 200 OK" /*expected value*/, "Correct status code returned");
-        System.out.println("Status Line :" + response.getStatusLine());
-
-        Assert.assertEquals(statusCode /*actual value*/, 200 /*expected value*/, "Correct status code returned");
-        System.out.println("Status Code :" + response.getStatusCode());
-
-        for (Header header : allHeaders) {
-            System.out.println("Key: " + header.getName() + " Value: " + header.getValue());
-        }
-
-        String contentType = response.header("Content-Type");
-        Assert.assertEquals(contentType /* actual value */, "application/json; charset=utf-8" /* expected value */);
-        log.info("Verified Content-Type in Header");
-
-        String serverType =  response.header("Server");
-        Assert.assertEquals(serverType /* actual value */, "openresty" /* expected value */);
-        log.info("Verified serverType in Header");
-
-        System.out.println("Response Body is: " + body.asString());
-        assertTrue(bodyAsString.toLowerCase().contains("hyderabad"), "Response body contains Hyderabad");
-        log.info("Verified hyderabad in body");
-
-            JSONObject JSONResponseBody = new JSONObject(response.asString());
+        JSONObject JSONResponseBody = new JSONObject(response.asString());
 
         assertTrue(bodyAsString.contains("external_id"),"external_id received from Response ");
         assertTrue(JSONResponseBody.get("external_id").equals("HYD_TEST001"));

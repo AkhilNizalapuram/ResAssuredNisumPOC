@@ -1,15 +1,20 @@
 package com.nisum.poc.TestNG;
 
-import com.nisum.poc.Employee.*;
+import com.nisum.poc.Employee.DeleteEmployee;
+import com.nisum.poc.Employee.GETEmployee;
+import com.nisum.poc.Employee.POSTEmployee;
+import com.nisum.poc.Employee.PUTEmployee;
+import com.nisum.poc.ReadProperties;
 import io.restassured.RestAssured;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
 public class EmployeeTest {
-
     private static Logger log = Logger.getLogger(String.valueOf(EmployeeTest.class));
     protected static Properties prop = null;
     static {
@@ -19,30 +24,52 @@ public class EmployeeTest {
             e.printStackTrace();
         }
     }
-    @BeforeMethod(description = "Initializes URI",enabled = true)
+    @BeforeClass(description = "Initializes URI",enabled = true)
     public void setUp(){
-        RestAssured.baseURI = prop.getProperty("URI");
+        RestAssured.baseURI = prop.getProperty("EmployeeURI");
     }
 
-    @Test(description = "This method is used for validation of retriving weather details ",enabled = false,groups= {"Exclude Group"})
+    @Test(description = "This method is used for validation of retriving weather details ",priority=1,enabled = true,groups= {"Exclude Group"})
     public void validateGetEmployee() {
-        GETEmployee.retriveemployee(1);
-
+        GETEmployee.retriveemployee();
     }
 
-    @Test(description = "This method is used for validation of creating employee details ",priority=1,enabled = true,groups= {"Include Group"})
-    public void validatecreateEmployee() {
-        POSTEmployee.createemployee(1);
+    @Parameters({ "Method" })
+    @Test(description = "This method is used for validation of creating employee details ",priority=2,enabled = true,groups= {"Include Group"})
+    public void validatecreateEmployee(String Method) throws IOException {
+        POSTEmployee.createemployee();
+        log.info("The name of the method is "+ Method);
     }
 
-    @Test(description = "This method is used for validation of updating employee details ",priority=2,enabled = true,groups= {"Include Group"})
-    public void validateupdateteEmployee() {
-        PUTEmployee.updateEmployee(1);
+    @Test(description = "This method is used for validation of creating employee details ",priority=3,enabled = true,groups= {"Include Group"})
+    public void validateupdateEmployee() throws IOException {
+        PUTEmployee.updateEmployee();
     }
 
-    @Test(description = "This method is used for validation of deleting employee details ",priority=3,enabled = true,groups= {"Include Group"})
+    @Test (dataProvider="getData",priority=5)
+    public void loginTest(String Method, String Group){
+        System.out.println("First Method name is "+ Method);
+        System.out.println("Group name used is  "+ Group);
+    }
+
+    @DataProvider(name="getData")
+    public Object[][] getData(){
+
+        Object [][] data = new Object [2][2];
+
+        data [0][0] = "GetEmployee";
+        data [0][1] = "Exclude Group";
+
+        data[1][0] = "PostEmployee";
+        data[1][1] = "Include Group";
+
+        return data;
+
+    }
+    @Test(description = "This method is used for validation of deleting employee details ",priority=4,enabled = true,groups= {"Include Group"})
     public void validateDeleteEmployee() {
-        DeleteEmployee.deleteEmployee(1);
+        DeleteEmployee.deleteEmployee();
 
     }
+
 }

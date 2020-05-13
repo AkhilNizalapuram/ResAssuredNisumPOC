@@ -9,12 +9,21 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default Suite</th></tr>
-<tr><td><a href="#t0">NisumPOC</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">5,925</td><td></td><td></td></tr>
+<tr><td><a href="#t0">NisumPOC</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">7,128</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">NisumPOC &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.nisum.poc.TestNG.EmployeeTest</td><td><a href="#m0">validateDeleteEmployee</a></td><td rowspan="1">1588939517214</td><td rowspan="1">1022</td></tr><tr class="passedeven"><td><a href="#m1">validatecreateEmployee</a></td><td rowspan="1">1588939512971</td><td rowspan="1">3347</td></tr><tr class="passedeven"><td><a href="#m2">validateupdateteEmployee</a></td><td rowspan="1">1588939516323</td><td rowspan="1">888</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">NisumPOC &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.nisum.poc.TestNG.EmployeeTest</td><td><a href="#m0">validatecreateEmployee</a></td><td rowspan="1">1589372223569</td><td rowspan="1">0</td></tr><tr><th colspan="4">NisumPOC &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.nisum.poc.TestNG.EmployeeTest</td><td><a href="#m1">loginTest</a></td><td rowspan="2">1589372226371</td><td rowspan="2">0</td></tr><tr class="passedeven"><td><a href="#m2">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m3">validateDeleteEmployee</a></td><td rowspan="1">1589372225363</td><td rowspan="1">1003</td></tr><tr class="passedeven"><td><a href="#m4">validateGetEmployee</a></td><td rowspan="1">1589372220120</td><td rowspan="1">3443</td></tr><tr class="passedeven"><td><a href="#m5">validateupdateEmployee</a></td><td rowspan="1">1589372223574</td><td rowspan="1">1786</td></tr></tbody>
 </table>
-<h2>NisumPOC</h2><h3 id="m0">com.nisum.poc.TestNG.EmployeeTest#validateDeleteEmployee</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.nisum.poc.TestNG.EmployeeTest#validatecreateEmployee</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.nisum.poc.TestNG.EmployeeTest#validateupdateteEmployee</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>NisumPOC</h2><h3 id="m0">com.nisum.poc.TestNG.EmployeeTest#validatecreateEmployee</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+Parameter &apos;Method&apos; is required by @Test on method validatecreateEmployee but has not been marked @Optional or defined
+in C:\Users\NISUM\.IdeaIC2019.3\system\temp-testng-customsuite.xml
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+... Removed 23 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.nisum.poc.TestNG.EmployeeTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>GetEmployee</td><td>Exclude Group</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.nisum.poc.TestNG.EmployeeTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>PostEmployee</td><td>Include Group</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.nisum.poc.TestNG.EmployeeTest#validateDeleteEmployee</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.nisum.poc.TestNG.EmployeeTest#validateGetEmployee</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.nisum.poc.TestNG.EmployeeTest#validateupdateEmployee</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

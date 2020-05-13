@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameterization Test Suite">
+    <test name="Testing Parameterization">
+        <parameter name="Method" value="PostMethod"/>
+        <classes>
+            <class name="com.nisum.poc.TestNG.EmployeeTest" />
+        </classes>
+    </test>
+</suite>

@@ -1,4 +1,4 @@
-package com.nisum.poc.Employee;
+package com.nisum.poc;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,4 +22,16 @@ public class ReadProperties {
 
     }
 
+    public static Properties assertion_properties() throws IOException {
+
+        File file = new File("src/test/resources/configurations/config.properties");
+        InputStream fileInput = null;
+
+        fileInput = new FileInputStream(file);
+
+        Properties prop1 = new Properties();
+        prop1.load(fileInput);
+
+        return prop1;
+    }
 }

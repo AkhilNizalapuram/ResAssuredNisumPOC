@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_Suite">
-              <span class="suite-name border-passed">Default Suite</span>
+              <span class="suite-name border-failed">Default Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -59,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Default_Suite">
-                    <span>1 group</span>
+                    <span>2 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">6 methods, 1 failed,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_Suite" class="hide-methods failed suite-Default_Suite"> (hide)</a> <!-- hide-methods failed suite-Default_Suite -->
+                      <a href="#" panel-name="suite-Default_Suite" class="show-methods failed suite-Default_Suite"> (show)</a> <!-- show-methods failed suite-Default_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.nisum.poc.TestNG.EmployeeTest" hash-for-method="validatecreateEmployee">validatecreateEmployee</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,17 +116,27 @@
                     <div class="method-list-content passed suite-Default_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.nisum.poc.TestNG.EmployeeTest" hash-for-method="loginTest(GetEmployee, Exclude Group)">loginTest(GetEmployee, Exclude Group)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.nisum.poc.TestNG.EmployeeTest" hash-for-method="loginTest(PostEmployee, Include Group)">loginTest(PostEmployee, Include Group)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.nisum.poc.TestNG.EmployeeTest" hash-for-method="validateDeleteEmployee">validateDeleteEmployee</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.nisum.poc.TestNG.EmployeeTest" hash-for-method="validatecreateEmployee">validatecreateEmployee</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.nisum.poc.TestNG.EmployeeTest" hash-for-method="validateGetEmployee">validateGetEmployee</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.nisum.poc.TestNG.EmployeeTest" hash-for-method="validateupdateteEmployee">validateupdateteEmployee</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.nisum.poc.TestNG.EmployeeTest" hash-for-method="validateupdateEmployee">validateupdateEmployee</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_Suite -->
@@ -127,12 +151,53 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_Suite" class="panel Default_Suite">
+          <div class="suite-Default_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.nisum.poc.TestNG.EmployeeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validatecreateEmployee">
+                  </a> <!-- validatecreateEmployee -->
+                  <span class="method-name">validatecreateEmployee</span>
+                  <div class="stack-trace">org.testng.TestNGException: 
+Parameter &apos;Method&apos; is required by @Test on method validatecreateEmployee but has not been marked @Optional or defined
+in C:\Users\NISUM\.IdeaIC2019.3\system\temp-testng-customsuite.xml
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(This method is used for validation of creating employee details )                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_Suite-class-failed -->
           <div class="suite-Default_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">com.nisum.poc.TestNG.EmployeeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest(GetEmployee, Exclude Group)">
+                  </a> <!-- loginTest(GetEmployee, Exclude Group) -->
+                  <span class="method-name">loginTest</span>
+                  <span class="parameters">(GetEmployee, Exclude Group)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest(PostEmployee, Include Group)">
+                  </a> <!-- loginTest(PostEmployee, Include Group) -->
+                  <span class="method-name">loginTest</span>
+                  <span class="parameters">(PostEmployee, Include Group)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="validateDeleteEmployee">
@@ -144,20 +209,20 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="validatecreateEmployee">
-                  </a> <!-- validatecreateEmployee -->
-                  <span class="method-name">validatecreateEmployee</span>
+                  <a name="validateGetEmployee">
+                  </a> <!-- validateGetEmployee -->
+                  <span class="method-name">validateGetEmployee</span>
                   <em>
-(This method is used for validation of creating employee details )                  </em>
+(This method is used for validation of retriving weather details )                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="validateupdateteEmployee">
-                  </a> <!-- validateupdateteEmployee -->
-                  <span class="method-name">validateupdateteEmployee</span>
+                  <a name="validateupdateEmployee">
+                  </a> <!-- validateupdateEmployee -->
+                  <span class="method-name">validateupdateEmployee</span>
                   <em>
-(This method is used for validation of updating employee details )                  </em>
+(This method is used for validation of creating employee details )                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -199,6 +264,14 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
+              <span class="test-group-name">Exclude Group</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">validateGetEmployee</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
               <span class="test-group-name">Include Group</span>
               <br/>
               <div class="method-in-group">
@@ -210,7 +283,7 @@
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">validateupdateteEmployee</span>
+                <span class="method-in-group-name">validateupdateEmployee</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -230,24 +303,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validatecreateEmployee')
+data.setCell(0, 1, 'validateGetEmployee')
 data.setCell(0, 2, 'com.nisum.poc.TestNG.EmployeeTest')
-data.setCell(0, 3, 3347);
+data.setCell(0, 3, 3443);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'validateDeleteEmployee')
+data.setCell(1, 1, 'validateupdateEmployee')
 data.setCell(1, 2, 'com.nisum.poc.TestNG.EmployeeTest')
-data.setCell(1, 3, 1022);
+data.setCell(1, 3, 1786);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'validateupdateteEmployee')
+data.setCell(2, 1, 'validateDeleteEmployee')
 data.setCell(2, 2, 'com.nisum.poc.TestNG.EmployeeTest')
-data.setCell(2, 3, 888);
+data.setCell(2, 3, 1003);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'loginTest')
+data.setCell(3, 2, 'com.nisum.poc.TestNG.EmployeeTest')
+data.setCell(3, 3, 0);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'loginTest')
+data.setCell(4, 2, 'com.nisum.poc.TestNG.EmployeeTest')
+data.setCell(4, 3, 0);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'validatecreateEmployee')
+data.setCell(5, 2, 'com.nisum.poc.TestNG.EmployeeTest')
+data.setCell(5, 3, 0);
 window.suiteTableData['Default_Suite']= { tableData: data, tableDiv: 'times-div-Default_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Default_Suite">
               </div> <!-- times-div-Default_Suite -->
             </div> <!-- times-div -->
@@ -262,16 +347,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.nisum.poc.TestNG.EmployeeTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">validateGetEmployee</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_Suite" class="panel">
@@ -281,29 +359,29 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.nisum.poc.TestNG.EmployeeTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
+              <div class="configuration-class before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
+              </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">validatecreateEmployee</span>
-                <span class="method-start">609 ms</span>
+                <span class="method-name">validateGetEmployee</span>
+                <span class="method-start">852 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">3960 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">validateupdateteEmployee</span>
-                <span class="method-start">3961 ms</span>
+                <span class="method-name">validateupdateEmployee</span>
+                <span class="method-start">4306 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">4849 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validateDeleteEmployee</span>
-                <span class="method-start">4852 ms</span>
+                <span class="method-start">6095 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginTest(GetEmployee, Exclude Group)</span>
+                <span class="method-start">7103 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginTest(PostEmployee, Include Group)</span>
+                <span class="method-start">7105 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

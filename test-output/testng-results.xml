@@ -1,41 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="4" passed="3">
+<testng-results skipped="0" failed="1" ignored="0" total="6" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="5925" started-at="2020-05-08T17:35:12 IST" finished-at="2020-05-08T17:35:18 IST">
+  <suite name="Default Suite" duration-ms="7128" started-at="2020-05-13T17:46:59 IST" finished-at="2020-05-13T17:47:06 IST">
     <groups>
+      <group name="Exclude Group">
+        <method signature="EmployeeTest.validateGetEmployee()[pri:1, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="validateGetEmployee" class="com.nisum.poc.TestNG.EmployeeTest"/>
+      </group> <!-- Exclude Group -->
       <group name="Include Group">
-        <method signature="EmployeeTest.validateDeleteEmployee()[pri:3, instance:com.nisum.poc.TestNG.EmployeeTest@66a3ffec]" name="validateDeleteEmployee" class="com.nisum.poc.TestNG.EmployeeTest"/>
-        <method signature="EmployeeTest.validatecreateEmployee()[pri:1, instance:com.nisum.poc.TestNG.EmployeeTest@66a3ffec]" name="validatecreateEmployee" class="com.nisum.poc.TestNG.EmployeeTest"/>
-        <method signature="EmployeeTest.validateupdateteEmployee()[pri:2, instance:com.nisum.poc.TestNG.EmployeeTest@66a3ffec]" name="validateupdateteEmployee" class="com.nisum.poc.TestNG.EmployeeTest"/>
+        <method signature="EmployeeTest.validateDeleteEmployee()[pri:4, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="validateDeleteEmployee" class="com.nisum.poc.TestNG.EmployeeTest"/>
+        <method signature="EmployeeTest.validatecreateEmployee(java.lang.String)[pri:2, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="validatecreateEmployee" class="com.nisum.poc.TestNG.EmployeeTest"/>
+        <method signature="EmployeeTest.validateupdateEmployee()[pri:3, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="validateupdateEmployee" class="com.nisum.poc.TestNG.EmployeeTest"/>
       </group> <!-- Include Group -->
     </groups>
-    <test name="NisumPOC" duration-ms="5925" started-at="2020-05-08T17:35:12 IST" finished-at="2020-05-08T17:35:18 IST">
+    <test name="NisumPOC" duration-ms="7128" started-at="2020-05-13T17:46:59 IST" finished-at="2020-05-13T17:47:06 IST">
       <class name="com.nisum.poc.TestNG.EmployeeTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nisum.poc.TestNG.EmployeeTest@66a3ffec]" name="setUp" is-config="true" duration-ms="608" started-at="2020-05-08T17:35:12 IST" description="Initializes URI" finished-at="2020-05-08T17:35:12 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="setUp" is-config="true" duration-ms="830" started-at="2020-05-13T17:46:59 IST" description="Initializes URI" finished-at="2020-05-13T17:47:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validatecreateEmployee()[pri:1, instance:com.nisum.poc.TestNG.EmployeeTest@66a3ffec]" name="validatecreateEmployee" duration-ms="3347" started-at="2020-05-08T17:35:12 IST" description="This method is used for validation of creating employee details " finished-at="2020-05-08T17:35:16 IST">
+        <test-method status="PASS" signature="validateGetEmployee()[pri:1, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="validateGetEmployee" duration-ms="3443" started-at="2020-05-13T17:47:00 IST" description="This method is used for validation of retriving weather details " finished-at="2020-05-13T17:47:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateGetEmployee -->
+        <test-method status="FAIL" signature="validatecreateEmployee(java.lang.String)[pri:2, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="validatecreateEmployee" duration-ms="0" started-at="2020-05-13T17:47:03 IST" description="This method is used for validation of creating employee details " finished-at="2020-05-13T17:47:03 IST">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'Method' is required by @Test on method validatecreateEmployee but has not been marked @Optional or defined
+in C:\Users\NISUM\.IdeaIC2019.3\system\temp-testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'Method' is required by @Test on method validatecreateEmployee but has not been marked @Optional or defined
+in C:\Users\NISUM\.IdeaIC2019.3\system\temp-testng-customsuite.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:272)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:360)
+at org.testng.internal.Parameters.createParameters(Parameters.java:704)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:879)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:744)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:783)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validatecreateEmployee -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nisum.poc.TestNG.EmployeeTest@66a3ffec]" name="setUp" is-config="true" duration-ms="1" started-at="2020-05-08T17:35:16 IST" description="Initializes URI" finished-at="2020-05-08T17:35:16 IST">
+        <test-method status="PASS" signature="validateupdateEmployee()[pri:3, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="validateupdateEmployee" duration-ms="1786" started-at="2020-05-13T17:47:03 IST" description="This method is used for validation of creating employee details " finished-at="2020-05-13T17:47:05 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validateupdateteEmployee()[pri:2, instance:com.nisum.poc.TestNG.EmployeeTest@66a3ffec]" name="validateupdateteEmployee" duration-ms="888" started-at="2020-05-08T17:35:16 IST" description="This method is used for validation of updating employee details " finished-at="2020-05-08T17:35:17 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateupdateteEmployee -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.nisum.poc.TestNG.EmployeeTest@66a3ffec]" name="setUp" is-config="true" duration-ms="2" started-at="2020-05-08T17:35:17 IST" description="Initializes URI" finished-at="2020-05-08T17:35:17 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validateDeleteEmployee()[pri:3, instance:com.nisum.poc.TestNG.EmployeeTest@66a3ffec]" name="validateDeleteEmployee" duration-ms="1022" started-at="2020-05-08T17:35:17 IST" description="This method is used for validation of deleting employee details " finished-at="2020-05-08T17:35:18 IST">
+        </test-method> <!-- validateupdateEmployee -->
+        <test-method status="PASS" signature="validateDeleteEmployee()[pri:4, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="validateDeleteEmployee" duration-ms="1003" started-at="2020-05-13T17:47:05 IST" description="This method is used for validation of deleting employee details " finished-at="2020-05-13T17:47:06 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateDeleteEmployee -->
+        <test-method status="PASS" signature="loginTest(java.lang.String, java.lang.String)[pri:5, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="loginTest" duration-ms="0" started-at="2020-05-13T17:47:06 IST" data-provider="getData" finished-at="2020-05-13T17:47:06 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[GetEmployee]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Exclude Group]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String, java.lang.String)[pri:5, instance:com.nisum.poc.TestNG.EmployeeTest@4667ae56]" name="loginTest" duration-ms="0" started-at="2020-05-13T17:47:06 IST" data-provider="getData" finished-at="2020-05-13T17:47:06 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PostEmployee]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Include Group]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
       </class> <!-- com.nisum.poc.TestNG.EmployeeTest -->
     </test> <!-- NisumPOC -->
   </suite> <!-- Default Suite -->
